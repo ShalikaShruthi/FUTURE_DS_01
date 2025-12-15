@@ -2,7 +2,7 @@
 """
 Created on Tue Dec  9 15:20:48 2025
 
-@author: shali
+@author: shalika
 """
 
 # Clean and organize raw sales data (Excel/CSV format).
