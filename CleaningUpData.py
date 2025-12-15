@@ -24,7 +24,7 @@ for row in reader:
 else:
     print("No empty cells\n")
 
-# """
+# """NOT DONE BECUASE IT WOULD NOT GIVE ACCURATE RESULTS DURING ANALYSIS
 # # #2.noisy data check (use density-based clustering)
 # # import pandas as pd
 # # df = pd.read_csv(r"C:\Users\shali\OneDrive\Desktop\vs programs\I Business Sales Dashboard\Data\superstore.csv", encoding = "Windows-1252")
@@ -50,7 +50,7 @@ print(df.dtypes)
 #put if loops to check if the column is numeric, then try converting the values in it to numeric and check which ones fail(then fix it by removing the record or by filling global constant)
 numeric_col = df.select_dtypes(include=["int64","float64"]).columns
 for col in numeric_col:
-    # Coerece: If a value cannot be converted, turn it into NaN instead of raising an error.
+    # Coerce: If a value cannot be converted, turn it into NaN instead of raising an error.
     # .isna(): checks which values are NaN
     mismatch_dtype_rows = df[pd.to_numeric(df[col], errors="coerce").isna()]
     if len(mismatch_dtype_rows) > 0:
