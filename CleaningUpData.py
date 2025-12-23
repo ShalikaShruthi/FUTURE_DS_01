@@ -11,17 +11,21 @@ import csv
 import os
 #OPEN THE FOLDER AND THEN USE FOR LOOP TO READ
 folder = r"C:/Users/shali/OneDrive/Desktop/vs programs/I Business Sales Dashboard/Data"
+empty_found = False
 
 #1.incomplete data check
 # ITERATIVELY READING THE FILES
 for file in os.listdir(folder):
     if file.endswith(".csv"):
-        reader = csv.reader(file)
+        file_path = os.path.join(folder,file)
+        with open(file_path, newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
 
-for row in reader:
-    if "" in row:
-        print(row)
-else:
+            for row in reader:
+                if "" in row:
+                    print(f"Empty cells found in the {file}: {row}")
+                    empty_found = True
+if not empty_found:
     print("No empty cells\n")
 
 # """NOT DONE BECUASE IT WOULD NOT GIVE ACCURATE RESULTS DURING ANALYSIS
